@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<style type="text/css">
+  .hello{
+    width: 100%;
+    text-align: center;
+    color:#FFFFFF;
+  }
+
+  .btn-group button {
+  align: center;
+  background-color: #802bb1;
+  border: 1px solid black;
+  color: white;
+  padding: 10px 30px;
+  cursor: pointer;
+  }
+
+  .btn-group button:not(:last-child) {
+    border-right: none;
+  }
+
+  /* Clear floats (clearfix hack) */
+  .btn-group:after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+
+  /* Add a background color on hover */
+  .btn-group button:hover {
+    background-color: #4d2c61;
+  }
+
+</style>
+
+
+<div class="row" style="width:100%;height: 100vh; background-color: #2d283e; padding-top: 2.7%;padding-bottom: 1.7%; margin:0px;">
+  <div class="hello">
+    <h1>Welcome {{ current_user.name}}!</h1>
+    <br></br>
+    <h3>Remember to keep building on your workouts and diet.</h3>
+    <h3>If you ever feel overwhelmed, take it slow and celebrate the progress you've made.</h3>
+    <h1></h1>
+    <br></br>
+    <div class="btn-group" style="width:33.3%">
+      <a href='http://127.0.0.1:5000/diet' style="width:33.3%"><button>Track Diet</button></a>
+      <a href='http://127.0.0.1:5000/workouts' style="width:33.3%"><button>Get Workouts</button></a>
+      <a href='http://127.0.0.1:5000/progression' style="width:33.3%"><button>View Progression</button></a>
+    </div>
+    <br></br>
+    <br></br>
+    <h3>Here's a randomly generated quote to help you stay motivated. Good Luck!</h3>
+    <br></br>
+    <h1>"{{ quote }}"</h1>
+    <h2>- {{ author }}</h2>
+  </div>
+</div>
+
+{% endblock %}
