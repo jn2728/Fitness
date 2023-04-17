@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="row" style="width:100%;height: 100vh; background-color: #2d283e; padding-top: 2.7%;padding-bottom: 1.7%; margin:0px;">
+<table class="table table-dark caption-top">
+  <caption>Calorie Tracker Example</caption>
+  <thead>
+    <tr> <!--Breakdown of how the diet will be displayed-->
+      <th scope="col">Date</th>
+      <th scope="col">Calories</th>
+      <th scope="col">Deficit</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">3/17/22</th>
+      <td>1,600</td>
+      <td>-400</td>
+    </tr>
+  </tbody>
+</table> <!--Encouraging messages to ensure overall costumer enjoyment of app-->
+<p style="color:white; font-size:30px">This is an example of the table, fill out your BMR and caloric intake with the addBMR and addCals buttons. Try to be as accurate as possible but remember, results do not come in one day. Keep it up!</p>
+
+<p style="color:white; font-size:30px"> 72% of people gained weight due to the lack of exercise in 2020. An essential part to maintaining a healthy mind and body is your diet.
+The purpose of this component is not to provide a strict eating regimen and guide, but rather to help you manage your own dietary goals and responsibilites.</p>
+
+
+<a href="{{ url_for('addBMR') }}">Add BMR</a>
+<br></br>
+<br></br>
+<a href="{{url_for('addCals')}}">Add CALS</a>
+<!-->The content of addBMR.html may be implemented here<-->
+{% endblock %}

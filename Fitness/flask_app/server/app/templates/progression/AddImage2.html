@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="row" style="width:100%; height: 100vh; background-color: #2d283e; padding-top: 0.5%; padding-bottom: 2; margin:0px;">
+
+<div class="container-fluid">
+
+  <!-- Spacing between navbar and card -->
+  <div class="row" style="margin-top:2.5%">
+
+    <div class="offset-md-4 col-md-4">
+      <div class="card">
+        <div class="card-header text-center">
+          <h1>Add After Image</h1>
+        </div>
+        <div class="card-body">
+
+          <form action="" method="post" enctype="multipart/form-data">
+            {{ form.hidden_tag() }}
+
+              <!-- Image -->
+              <div class="form-group" style="margin-bottom:0px;">
+                {{ form.pic2.label }} <br>
+                {{ form.pic2(class="form-control") }} <br>
+                {% for error in form.pic2.errors %}
+                <span style="color: red;">[{{ error }}]</span>
+                {% endfor %}
+              </div>
+
+              <!-- Weight -->
+              <div class="form-group" style="margin-bottom:0px;">
+                {{ form.aWeight.label }} <br>
+                {{ form.aWeight(class="form-control") }} <br>
+                {% for error in form.aWeight.errors %}
+                <span style="color: red;">[{{ error }}]</span>
+                {% endfor %}
+              </div>
+
+              <!-- Date -->
+              <div class="form-group" style="margin-bottom:0px;">
+                {{ form.aDate.label }} <br>
+                {{ form.aDate(class="form-control") }} <br>
+                {% for error in form.aDate.errors %}
+                <span style="color: red;">[{{ error }}]</span>
+                {% endfor %}
+              </div>
+
+              <!-- Submit Button -->
+              {{ form.submit(class="btn btn-primary", style="width:100%;") }}
+
+          </form>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+</div>
+{% endblock %}

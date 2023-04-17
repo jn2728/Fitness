@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="row" style="width:100%;height: 100vh; background-color: #2d283e; padding-top: 2.7%;padding-bottom: 1.7%; margin:0px;">
+<table class="table table-dark caption-top">
+  <caption>Calorie Tracker</caption>
+  <thead>
+    <tr> <!--Breakdown of how the diet will be displayed-->
+      <th scope="col">Date</th>
+      <th scope="col">Calories</th>
+      <th scope="col">Defecit | Surplus</th>
+      <!--<th scope="col">Calories Remaining</th> -->
+    </tr>
+  </thead>
+  <tbody>
+    {% for result in bigList %}
+    <tr>
+    {% for elem in result %}
+        <td>{{elem}}</td>
+    {% endfor %}
+    </tr>
+{% endfor %}
+
+  </tbody>
+</table> <!--Encouraging messages to ensure overall costumer enjoyment of app-->
+<p style="color:white; font-size:30px">An essential part to maintaining a healthy mind and body is your diet.
+The purpose of this component is not to provide a strict eating regimen and guide, but rather to help you manage your own dietary goals and responsibilites. Remember, the key
+to losing aweight and maintaining is diet. You can't work off a bad diet. </p>
+
+
+<a href="{{ url_for('addBMR') }}">Add BMR</a>
+<br></br>
+<br></br>
+<a href="{{url_for('addCals')}}">Add CALS</a>
+<!--The content of addBMR.html may be implemented here-->
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container-fluid">
+<script type="text/javascript" set style="width:50%; height:30vw"  async id="bmr-calculator" data-type="verywell-tool" data-vertical="verywellfit" src="https://www.verywellfit.com/static/4.275.0/components/tools/calculators/iframe-embed/embed.min.js?id=bmr-calculator"></script>
+  <!-- Spacing between navbar and card -->
+  <div class="row" style="margin-top:2.5%">
+
+    <div class="offset-md-4 col-md-4">
+      <div class="card">
+        <div class="card-header text-center">
+          <h1>Add BMR</h1>
+        </div>
+        <div class="card-body">
+
+          <form action="" method="post">
+           {{ form.hidden_tag() }}
+
+             <!-- title -->
+
+             <div class="form-group" style="margin-bottom:0px;">
+               {{ form.BMR.label }} <br>
+               {{ form.BMR(class="form-control") }} <br>
+               {% for error in form.BMR.errors %}
+               <span style="color: red;">[{{ error }}]</span>
+               {% endfor %}
+             </div>
+             {{ form.submit(class="btn btn-primary", style="width:100%;") }}
+
+        </form>
+      </div>
+    </div>
+  </div>
+
+</div>
+</div>
+{% endblock %}
