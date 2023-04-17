@@ -1,6 +1,6 @@
 # FitnessApp
 Fitness Application project
-MEMBERS: Matthew O., Jay L., Carter M., Jacob M., Lance F.
+
 
 Steps to run the app:
 
